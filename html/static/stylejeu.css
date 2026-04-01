@@ -1,0 +1,150 @@
+body {
+    background-image: url("chatglace.jpg");
+    background-size: cover; /* augmente ou diminue selon le pourcentage */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+h1 {
+    display: inline-flex;
+    padding: 15px 30px;
+    border-radius: 16px;
+    font-size: 20px;
+    font-family: "Arial", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    /* Fond verre moderne */
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+
+    /* Légère ombre texte pour lisibilité */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+    color: white;
+    font-size: 30px;
+    font-family: "3DS Fonticon", sans-serif;
+    border-radius: 25px;
+}
+
+h3 {
+    font-size: 30px;
+    margin: 14px 0;
+    font-weight: 700;
+
+    /* Lueur douce + contour légèrement lumineux */
+    text-shadow:
+            0 0 8px rgb(5, 5, 5),
+            0 0 18px rgb(5, 5, 5);
+
+    /* Mise en forme propre */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+a {
+    display: inline-block;
+    padding: 14px 32px;          /* un peu plus grand et confortable */
+    border-radius: 28px;          /* arrondi moderne */
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+
+    /* Fond verre transparent */
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+
+    /* Ombres douces pour relief */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35),
+    inset 0 0 6px rgba(255,255,255,0.15);
+
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+form button {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(12px);
+    padding: 14px;
+    width: 65px;
+    height: 65px;
+    border-radius: 25px;
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: white;
+
+    /* Ombres douces pour relief */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35),
+    inset 0 0 6px rgba(255,255,255,0.15);
+}
+
+form button:hover {
+    background: rgba(0, 0, 0, 0.28);
+    transform: translateY(-4px);
+}
+
+form button:active {
+    transform: scale(0.93);
+}
+
+/* --- MESSAGE WINNER --- */
+.winner {
+    margin-top: 20px;
+    padding: 20px 35px;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    color: #ffffff;
+
+    /* Texte lumineux */
+    text-shadow: 0 0 10px rgba(0,255,200,0.7), 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* --- JETONS ROUGES --- */
+.hole.red {
+    background: radial-gradient(circle at 30% 30%, #fecece, #f5ecef);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    box-shadow:
+            inset 0 4px 6px rgba(255,255,255,0.4),  /* lumière interne */
+            inset 0 -4px 6px rgba(0,0,0,0.6),       /* ombre interne */
+            0 4px 12px rgba(0,0,0,0.5);             /* ombre externe */
+}
+
+/* --- JETONS JAUNES --- */
+.hole.yellow {
+    background: radial-gradient(circle at 30% 30%, #f6a456, #ff8400);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    box-shadow:
+            inset 0 4px 6px rgba(255,255,255,0.4),
+            inset 0 -4px 6px rgba(0,0,0,0.6),
+            0 4px 12px rgba(0,0,0,0.5);
+}
+
+.hole {
+    box-shadow: inset 0 8px 10px rgba(255,255,255,0.1), inset 0 -8px 10px rgba(0,0,0,0.6);
+}
+
+.relief {
+    text-shadow: 2px 2px 4px black;
+}

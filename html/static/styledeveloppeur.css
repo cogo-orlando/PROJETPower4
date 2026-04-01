@@ -1,0 +1,68 @@
+body {
+    background-image: url("chatglace.jpg");
+    background-size: cover; /* augmente ou diminue selon le pourcentage */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: fangsong;
+    font-size: 40px;
+    height: 20px;
+    align-items: center;
+    text-shadow: 2px 2px 4px black;
+    margin-bottom: 20px;
+    color: #ebb9c7;
+    margin-top: 5px;
+}
+
+.list {
+    list-style: none;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 200px;
+    box-shadow: 0 5px 10px;
+    border-radius: 5vh;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    padding-left: 2em;
+    font-size: 25px;
+    text-shadow: 2px 2px 4px black;
+    color : white;
+}
+
+.list li {
+    position: relative;
+    margin: 12px 0;
+    font-size: 30px;
+}
+
+a {
+    display: inline-block;
+    padding: 14px 32px;          /* un peu plus grand et confortable */
+    border-radius: 28px;          /* arrondi moderne */
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-family: "3DS Fonticon", sans-serif;
+
+    /* Fond verre transparent */
+    background: rgba(0, 0, 0, 0.32);;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+
+    /* Ombres douces pour relief */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35),
+    inset 0 0 6px rgba(255,255,255,0.15);
+
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+

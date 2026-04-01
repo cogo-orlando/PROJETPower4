@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Choisir les noms</title>
+    <link rel="stylesheet" href="static/stylestart.css">
+</head>
+<style>
+    .relief {
+        font-size: 40px;
+    }
+
+    .zone-bas-droite {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+    }
+
+    .bouton-texte {
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-top: -15px;
+    }
+
+    .bouton-texte:active {
+        transform: translateY(-3px);
+    }
+
+    .pseudo {
+        padding: 40px 60px;
+        border-radius: 22px;
+        backdrop-filter: blur(12px);
+        text-align: center;
+        animation: pop 0.4s ease-out;
+    }
+
+    @keyframes pop {
+        0% { transform: scale(0.85); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+</style>
+<body>
+<div class="pseudo">
+    <h1>Noms des joueurs</h1>
+
+    <form method="POST" action="/start">
+        <input type="text" name="player1" placeholder="Nom du Joueur 1" required>
+        <input type="text" name="player2" placeholder="Nom du Joueur 2" required>
+
+        <button type="submit">Lancer le jeu</button>
+    </form>
+</div>
+
+<div class="zone-bas-droite relief bouton-texte">
+    <a href="/" style="text-decoration:none;">Retour au menu</a>
+</div>
+
+</body>
+</html>

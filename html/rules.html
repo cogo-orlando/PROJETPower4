@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>règles du jeu</title>
+    <link rel="stylesheet" href="static/rules.css">
+</head>
+<style>
+    .zone-bas-droite {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+    }
+
+    .rules-text {
+        margin: 25px;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bouton-texte {
+        padding: 14px 28px;
+        border-radius: 5vh;
+        display: inline-block;
+        font-weight: bold;
+        text-decoration: none;
+        font-family: fangsong;
+        text-align: center;
+        margin-top: -60px;
+    }
+
+    .bouton-texte:hover {
+        background: #ebb9c7;
+    }
+
+</style>
+<body>
+<h1 class="relief">Règles du jeu !</h1>
+<div class="rules-text">
+    <p>
+        Chaque joueur choisis une colonne dans laquelle faire tomber son pion.
+
+        Le premier joueur à aligner 4 pions horizontalement, verticalement ou diagonalement, gagne !
+
+        Si à la fin la grille est pleine sans gagnant, c'est un match nul ! :)
+    </p>
+</div>
+<div class="bouton-texte" >
+    <a href="/">Retour au menu</a>
+</div>
+</body>
+</html>

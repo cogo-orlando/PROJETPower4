@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>PUISSANCE CAT : JEU</title>
+    <link rel="stylesheet" href="static/stylejeu.css">
+
+    {{if .Winner}}
+    <!-- Recharge la page après 2 secondes pour recommencer une partie -->
+    <meta http-equiv="refresh" content="10;url=/game">
+    {{end}}
+
+    <style>
+        :root { --cols: 7; --rows: 6; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .text-centre {
+            text-align: center;
+        }
+
+        .relief {
+            font-size: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            margin-top: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(7, 80px);
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .bouton-texte {
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: -15px;
+        }
+
+        .bouton-texte:active { transform: translateY(-3px); }
+
+        .board {
+            display: grid;
+            grid-template-columns: repeat(7, 80px);
+            grid-template-rows: repeat(6, 80px);
+            gap: 10px;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: -20px;
+        }
+
+        .hole {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background: transparent;
+        }
+
+        .zone-bas-droite {
+            position: absolute;
+            bottom: 15px;
+            right: 10px;
+        }
+
+        .text-coter-gauche {
+            position: absolute;
+            left: 40px;
+            top: 280px;
+        }
+
+        .winner {
+            margin-top: -20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            animation: flash 1.5s infinite alternate;
+        }
+
+        @keyframes flash { from { opacity: 1; } to { opacity: 0.5; } }
+    </style>
+</head>
+
+<body>
+
+<div class="text-centre relief">
+    <h1>PUISSANCE CAT 🐈</h1>
+</div>
+
+<div class="text-coter-gauche relief">
+    <h3>{{.Player1.Name}} ⚪</h3>
+    <h3>{{.Player2.Name}} 🟠</h3>
+    <h3>Au tour de :
+        {{if eq .Player 1}}{{.Player1.Name}} ⚪{{else}}{{.Player2.Name}} 🟠{{end}}
+    </h3>
+</div>
+
+<div class="zone-bas-droite relief bouton-texte">
+    <a href="/" style="text-decoration:none;">Retour au menu</a>
+</div>
+
+<div class="container">
+
+    {{if .Winner}}
+    <div class="winner">
+        🎉 {{if eq .Winner 1}}{{.Player1.Name}} ⚪{{else}}{{.Player2.Name}} 🟠{{end}} a gagné ! 🎉
+    </div>
+    {{else}}
+    <form method="POST">
+        {{range $i := .Cols}}
+        <button class="bouton-texte" name="column" value="{{$i}}">⬇</button>
+        {{end}}
+    </form>
+    {{end}}
+
+    <div class="board">
+        {{range .Grid}}
+        {{range .}}
+        <div class="hole {{if eq . 1}}red{{else if eq . 2}}yellow{{end}}"></div>
+        {{end}}
+        {{end}}
+    </div>
+</div>
+
+</body>
+</html>

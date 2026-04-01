@@ -1,0 +1,109 @@
+body {
+    height: 100vh;
+    background: url("chatglace.jpg") center/cover no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* ajoute de la profondeur au fond */
+    backdrop-filter: saturate(1.2);
+}
+
+h1 {
+    color: white;
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-family: fangsong;
+}
+
+input {
+    width: 260px;
+    padding: 14px;
+    margin: 12px 0;
+
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 14px;
+
+    color: white;
+    font-size: 18px;
+    text-align: center;
+
+    backdrop-filter: blur(8px);
+    outline: none;
+    transition: 0.25s ease;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.75);
+}
+
+input:focus {
+    background: rgba(255,255,255,0.28);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+
+/* ---------- BOUTON ---------- */
+button {
+    width: 260px;
+    padding: 14px 26px;
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 16px;
+
+    background: linear-gradient(135deg, #695f5f, #7fd2c5);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+
+    cursor: pointer;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+
+    transition: 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+    opacity: 0.95;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+a {
+    display: inline-block;
+    padding: 14px 32px;          /* un peu plus grand et confortable */
+    border-radius: 28px;          /* arrondi moderne */
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-family: "3DS Fonticon", sans-serif;
+
+    /* Fond verre transparent */
+    background: rgba(0, 0, 0, 0.32);;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+
+    /* Ombres douces pour relief */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.35),
+    inset 0 0 6px rgba(255,255,255,0.15);
+
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+.pseudo {
+    background: rgba(0, 0, 0, 0.32);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
