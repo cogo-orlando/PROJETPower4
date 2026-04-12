@@ -3,9 +3,14 @@ package server
 import (
 	"fmt"
 	"net/http"
+	"os"
 )
 
 func Start() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // fallback en local
+	}
 
 	// fichiers statiques
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("web/static"))))
@@ -18,6 +23,6 @@ func Start() {
 	http.HandleFunc("/page4", developperHandler)
 	http.HandleFunc("/rules", rulesHandler)
 
-	fmt.Println("Serveur lancé sur http://localhost:8080")
-	http.ListenAndServe(":8080", nil)
+	fmt.Println("Serveur lancé sur http://localhost:" + port)
+	http.ListenAndServe(":"+port, nil)
 }
