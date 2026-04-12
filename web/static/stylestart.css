@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    background: url("chatglace.jpg") center/cover no-repeat fixed;
+    background: url("../img/chatglace.jpg") center/cover no-repeat fixed;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,8 +1,7 @@
-package gamelogic
+package server
 
 import (
 	"fmt"
-	"power4/utils"
 )
 
 type Player1 struct {
@@ -78,7 +77,7 @@ func PutToken2(grid [][]int, p2 Player2, columnChoice int) ([][]int, bool, strin
 // GAME LOOP (NOT USED)
 // (handled via HTTP events)
 func GameLoop(player1 Player1, player2 Player2, grid [][]int) [][]int {
-	for !utils.GridFull(grid) {
+	for !GridFull(grid) {
 		// In web version, this is replaced by button clicks
 		if CheckWin(grid) {
 			return grid
@@ -133,4 +132,32 @@ func CheckWin(grid [][]int) bool {
 		}
 	}
 	return false
+}
+
+func playMove(columnChoice int) [][]int {
+	var valid bool
+
+	if currentPlayer == 1 {
+		grid, valid, _ = PutToken1(grid, player1, columnChoice)
+	} else {
+		grid, valid, _ = PutToken2(grid, player2, columnChoice)
+	}
+
+	if !valid {
+		return grid
+	}
+
+	if CheckWin(grid) {
+		winner = currentPlayer
+		return grid
+	}
+
+	// changer de joueur
+	if currentPlayer == 1 {
+		currentPlayer = 2
+	} else {
+		currentPlayer = 1
+	}
+
+	return grid
 }

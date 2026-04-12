@@ -1,5 +1,5 @@
 body {
-    background-image: url("chatglace.jpg");
+    background-image: url("../img/chatglace.jpg");
     background-size: cover; /* augmente ou diminue selon le pourcentage */
     background-repeat: no-repeat;
     background-position: center;

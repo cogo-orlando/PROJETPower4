@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: fangsong;
-    background-image: url("chatglace.jpg");
+    background-image: url("../img/chatglace.jpg");
     background-position: center;
     height: 100vh;
     display: flex;
